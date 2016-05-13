@@ -11,6 +11,8 @@ class Cart < ActiveRecord::Base
   def checkout
     self.status = "submitted"
     self.save
+    self.user.current_cart = nil
+    self.user.save
     change_inventory
   end
 
