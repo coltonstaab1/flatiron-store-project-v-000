@@ -5,7 +5,6 @@ class Cart < ActiveRecord::Base
   has_many :items, through: :line_items
 
   def add_item(item_id)
-    binding.pry
     line_item = self.line_items.find_by(item_id) 
     if line_item 
       line_item.quantity += 1
