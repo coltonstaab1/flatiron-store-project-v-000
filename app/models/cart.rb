@@ -26,6 +26,14 @@ class Cart < ActiveRecord::Base
     
   end
 
+  def total
+    total = 0
+    self.line_items.each do |line_item|
+      total += line_item.item.price * line_item.quantity
+    end
+    total
+  end
+
   private
   def change_inventory
     if self.status = "submitted"
