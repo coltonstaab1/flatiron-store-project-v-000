@@ -1,0 +1,8 @@
+<ul>
+<% @cart.items.each do |item| %>
+  <li><%= item.title %></li>
+<% end %>
+</ul>
+<% if @cart.status != "submitted" %>
+  <%= button_to 'Checkout', checkout_path(@cart.id) %>
+<% end %>
