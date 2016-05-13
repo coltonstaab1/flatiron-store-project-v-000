@@ -15,10 +15,6 @@ class Cart < ActiveRecord::Base
     line_item
   end
 
-  def total
-
-  end
-
   def checkout
     self.status = "submitted"
     self.save
