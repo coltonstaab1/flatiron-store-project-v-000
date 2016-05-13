@@ -1,6 +1,6 @@
 <ul>
-<% @cart.items.each do |item| %>
-  <li><%= item.title %></li>
+<% @cart.line_items.each do |line_item| %>
+  <li><%= line_item.item.title %> | Quantity: <%= line_item.quantity %> | </li>
 <% end %>
 </ul>
 <% if @cart.status != "submitted" %>
